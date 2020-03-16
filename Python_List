@@ -1,0 +1,357 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Использование списков"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Обыкновенный ввод / ввывод"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[20, 61, 2, 37, 4, 55, 36, 7, 18, 39]\n",
+      "['Красный', 'Оранжевый', 'Желтый', 'Зеленый', 'Голубой', 'Синий', 'Фиолетовый']\n"
+     ]
+    }
+   ],
+   "source": [
+    "V = [20, 61, 2, 37, 4, 55, 36, 7, 18, 39] \n",
+    "Raduga = ['Красный', 'Оранжевый', 'Желтый', 'Зеленый', 'Голубой', 'Синий', 'Фиолетовый']\n",
+    "print(V)\n",
+    "print(Raduga)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Простоые операции над списками"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[20, 61, 2, 37, 55, 36, 7, 18, 100, 101]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Объединение списков\n",
+    "a = [20, 61, 2, 37] \n",
+    "b = [55, 36, 7, 18] \n",
+    "c = a + b \n",
+    "d = c + [100, 101]\n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n",
+      "[55, 36, 7, 18, 55, 36, 7, 18, 55, 36, 7, 18, 55, 36, 7, 18, 55, 36, 7, 18, 55, 36, 7, 18, 55, 36, 7, 18, 55, 36, 7, 18]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#умножение списков\n",
+    "a = [0] * 10   \n",
+    "print (a)\n",
+    "k = 8 \n",
+    "b2 = b * k     \n",
+    "#b2 == ['', '', '', '', '', '', '', ''] \n",
+    "print (b2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### ввести в программу (с помощью инструкции input()) значения всех элементов и записать их в список. Это также можно сделать с использованием инструкции for: и"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 1\n",
+    "n = 5\n",
+    "for i in range(n):    \n",
+    "    el = input('Введите значение очередного элемента списка ')    \n",
+    "    a[i] = el \n",
+    "print (a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 2\n",
+    "n = 5\n",
+    "for i in range(n):    \n",
+    "    а[i] = input('Введите значение очередного элемента списка ')\n",
+    "print (a)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Заполнение списка случайными числами"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 1\n",
+    "from random import randint \n",
+    "n = 10\n",
+    "a=[0]*n\n",
+    "for i in range(n):    \n",
+    "  a[i] = randint(100, 200)\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 2\n",
+    "from random import randint \n",
+    "a=[]  \n",
+    "a = [randint(100, 200) for i in range(10)] \n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Суммирование элементов списка "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 1\n",
+    "S = 0 \n",
+    "for i in range(n):    \n",
+    "    S = S + a[i]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 2(Для слабаков!)\n",
+    "S = sum(a)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Нахождение суммы элементов списка с заданными свойствами "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "S = 0 \n",
+    "for i in range(n):    \n",
+    "    #Если элемент обладает заданными свойствами    \n",
+    "    if <условие>:        \n",
+    "        S = S + a[i]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Поиск и отбор нужных элементов"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for i in range(n):    \n",
+    "    if <условие>:        \n",
+    "        print(a[i])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Нахождение среднего арифметического значения элементов списка с заданными свойствами "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 1 Old school\n",
+    "from random import randint \n",
+    "S = 0 \n",
+    "kol = 0 \n",
+    "n = 10\n",
+    "a = []\n",
+    "a = [randint(100, 200) for i in range(10)] \n",
+    "print(a)\n",
+    "for i in range(n):    \n",
+    "  if a[i]<150:          #Если элемент списка\n",
+    "                        #удовлетворяет заданному условию       \n",
+    "    S = S + a[i]        #Учитываем его значение в сумме        \n",
+    "    kol = kol + 1       #и увеличиваем на 1 значение kol \n",
+    "  #Подсчет и вывод результата \n",
+    "if kol> 0:    \n",
+    "  sred = S/kol    \n",
+    "  print('Среднее значение: ', '% 5.1f '% sred) \n",
+    "else:    \n",
+    "  print('Таких чисел в списке нет')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Вариант 2 only Python...\n",
+    "from random import randint \n",
+    "S = 0 \n",
+    "kol = 0 \n",
+    "n = 10\n",
+    "a = []\n",
+    "a = [randint(100, 200) for i in range(10)] \n",
+    "print(a)\n",
+    "S = sum([a[i] for i in range(n) if a[i]<150]) \n",
+    "kol = len([a[i] for i in range(n) if a[i]<150]) \n",
+    "if kol > 0:    \n",
+    "  sred = S/kol   \n",
+    "  print('Среднее значение: ', '% 5.1f '% sred)\n",
+    "else:    \n",
+    "  print('Таких чисел в списке нет')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Работа с максимальными/минимальными элементами списка "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "M = a[0]  #Начальное присваивание значения искомой величине \n",
+    "for i in range(1, len(a)):  #Рассматриваем остальные элементы списка    \n",
+    "    #Сравниваем каждый элемент с текущим значением М    \n",
+    "if a[i] > M:  #Встретился элемент, больший М        \n",
+    "    M = a[i]  #Принимаем в качестве нового значения М "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Определение количества максимальных/минимальных элементов списка "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Начальное присваивание значений искомым величинам M = а[0]       #Максимальное значение \n",
+    "kol_max = 1    \n",
+    "#Количество максимальных значений \n",
+    "#Рассматриваем остальные элементы списка \n",
+    "for i in range (1, n):    \n",
+    "  if a [i] > M:        \n",
+    "    #Встретилось новое максимальное значение        \n",
+    "    #Принимаем его в качестве значения M        \n",
+    "    M = а[i]        \n",
+    "    #Пока он – единственный        \n",
+    "    kol_max = 1    \n",
+    "  else:        \n",
+    "    #Проверяем, не равен ли очередной элемент списка        #'старому' максимальному значению        \n",
+    "    if a[i] == M:            \n",
+    "    #Встретилось еще одно максимальное значение             #Учитываем это            \n",
+    "      kol_max = kol_max + 1"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
